@@ -54,32 +54,32 @@ case $SELECTED_THEME in
 *)
   # Default to night theme
   declare -A THEME=(
-    ["background"]="#1A1B26"
-    ["foreground"]="#a9b1d6"
-    ["black"]="#414868"
-    ["blue"]="#7aa2f7"
-    ["cyan"]="#7dcfff"
-    ["green"]="#73daca"
-    ["magenta"]="#bb9af7"
-    ["red"]="#f7768e"
-    ["white"]="#c0caf5"
-    ["yellow"]="#e0af68"
+    ["background"]="#222436"
+    ["foreground"]="#c8d3f5"
+    ["black"]="#444a73"
+    ["blue"]="#82aaff"
+    ["cyan"]="#86e1fc"
+    ["green"]="#c3e88d"
+    ["magenta"]="#c099ff"
+    ["red"]="#ff757f"
+    ["white"]="#c8d3f5"
+    ["yellow"]="#ffc777"
 
-    ["bblack"]="#2A2F41"
-    ["bblue"]="#7aa2f7"
-    ["bcyan"]="#7dcfff"
-    ["bgreen"]="#41a6b5"
-    ["bmagenta"]="#bb9af7"
-    ["bred"]="#ff9e64"
-    ["bwhite"]="#787c99"
-    ["byellow"]="#e0af68"
+    ["bblack"]="#2f334d"
+    ["bblue"]="#3e68d7"
+    ["bcyan"]="#0fb9d7"
+    ["bgreen"]="#4fd6be"
+    ["bmagenta"]="#ff007c"
+    ["bred"]="#c53b53"
+    ["bwhite"]="#828bb8"
+    ["byellow"]="#ff966c"
   )
   ;;
 esac
 
-THEME['ghgreen']="#3fb950"
+THEME['ghgreen']="#b8db87"
 THEME['ghmagenta']="#A371F7"
-THEME['ghred']="#d73a4a"
-THEME['ghyellow']="#d29922"
+THEME['ghred']="#e26a75"
+THEME['ghyellow']="#7ca1f2"
 
 RESET="#[fg=${THEME[foreground]},bg=${THEME[background]},nobold,noitalics,nounderscore,nodim]"

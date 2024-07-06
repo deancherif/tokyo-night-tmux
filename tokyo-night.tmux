@@ -19,7 +19,7 @@ RESET="#[fg=${THEME[foreground]},bg=${THEME[background]},nobold,noitalics,nounde
 # Highlight colors
 tmux set -g mode-style "fg=${THEME[bgreen]},bg=${THEME[bblack]}"
 
-tmux set -g message-style "bg=${THEME[blue]},fg=${THEME[background]}"
+tmux set -g message-style "bg=${THEME[bblack]},fg=${THEME[bwhite]}"
 tmux set -g message-command-style "fg=${THEME[white]},bg=${THEME[black]}"
 
 tmux set -g pane-border-style "fg=${THEME[bblack]}"
@@ -30,7 +30,7 @@ tmux set -g status-style bg="${THEME[background]}"
 
 TMUX_VARS="$(tmux show -g)"
 
-default_window_id_style="digital"
+default_window_id_style="fsquare"
 default_pane_id_style="hsquare"
 default_zoom_id_style="dsquare"
 
@@ -54,13 +54,13 @@ battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#[fg=${THEME[bblack]},bg=${THEME[blue]},bold] #{?client_prefix,󰠠 ,#[dim]󰤂 }#[bold,nodim]#S "
+tmux set -g status-left "#{?client_prefix,#[bg=${THEME[cyan]}]#[fg=${THEME[bblack]}] 󰠠 ,#[dim]#[bg=${THEME[bblack]}] 󰤂 }#[bold,nodim]"
 
 #+--- Windows ---+
 # Focus
-tmux set -g window-status-current-format "$RESET#[fg=${THEME[green]},bg=${THEME[bblack]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }#[fg=${THEME[foreground]},bold,nodim]$window_number#W#[nobold]#{?window_zoomed_flag, $zoom_number, $custom_pane}#{?window_last_flag, , }"
+tmux set -g window-status-current-format "$RESET#[fg=${THEME[bcyan]},bg=${THEME[cyan]},bold,nodim] $RESET#[fg=${THEME[bwhite]},bg=${THEME[bblack]},bold,nodim] $window_number$RESET#[fg=${THEME[cyan]},bg=${THEME[bblack]},bold,nodim]#W  "
 # Unfocused
-tmux set -g window-status-format "$RESET#[fg=${THEME[foreground]}] #{?#{==:#{pane_current_command},ssh},󰣀 , }${RESET}$window_number#W#[nobold,dim]#{?window_zoomed_flag, $zoom_number, $custom_pane}#[fg=${THEME[yellow]}]#{?window_last_flag,󰁯  , }"
+tmux set -g window-status-format "  ${RESET}#[fg=${THEME[bwhite]},bg=${THEME[background]},bold,nodim]$window_number#W  "
 
 #+--- Bars RIGHT ---+
 tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"
