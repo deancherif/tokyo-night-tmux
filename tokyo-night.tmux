@@ -26,7 +26,7 @@ tmux set -g pane-border-style "fg=${THEME[bblack]}"
 tmux set -g pane-active-border-style "fg=${THEME[blue]}"
 tmux set -g pane-border-status off
 
-tmux set -g status-style bg="${THEME[background]}"
+tmux set -g status-style bg=default
 
 TMUX_VARS="$(tmux show -g)"
 
@@ -60,7 +60,7 @@ tmux set -g status-left "#{?client_prefix,#[bg=${THEME[cyan]}]#[fg=${THEME[bblac
 # Focus
 tmux set -g window-status-current-format "$RESET#[fg=${THEME[bcyan]},bg=${THEME[cyan]},bold,nodim] $RESET#[fg=${THEME[bwhite]},bg=${THEME[bblack]},bold,nodim] $window_number$RESET#[fg=${THEME[cyan]},bg=${THEME[bblack]},bold,nodim]#W  "
 # Unfocused
-tmux set -g window-status-format "  ${RESET}#[fg=${THEME[bwhite]},bg=${THEME[background]},bold,nodim]$window_number#W  "
+tmux set -g window-status-format "${RESET}#[fg=${THEME[bwhite]},bg=${THEME[background]},bold,nodim]  $window_number#W  "
 
 #+--- Bars RIGHT ---+
 tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"
