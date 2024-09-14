@@ -54,13 +54,13 @@ battery_status="#($SCRIPTS_PATH/battery-widget.sh)"
 
 #+--- Bars LEFT ---+
 # Session name
-tmux set -g status-left "#{?client_prefix,#[bg=${THEME[cyan]}]#[fg=${THEME[bblack]}] 󰠠 ,#[dim]#[bg=${THEME[bblack]}] 󰤂 }#[bold,nodim]"
+tmux set -g status-left "#{?client_prefix,#[bg=${THEME[cyan]}]#[fg=${THEME[bblack]}] 󰠠  ,#[dim]#[bg=${THEME[bblack]}] 󰤂  }#[bold,nodim]"
 
 #+--- Windows ---+
 # Focus
-tmux set -g window-status-current-format "$RESET#[fg=${THEME[bcyan]},bg=${THEME[cyan]},bold,nodim] $RESET#[fg=${THEME[bwhite]},bg=${THEME[bblack]},bold,nodim] $window_number$RESET#[fg=${THEME[cyan]},bg=${THEME[bblack]},bold,nodim]#W  "
+tmux set -g window-status-current-format "$RESET #[fg=${THEME[bcyan]},bg=${THEME[cyan]},bold,nodim] $RESET#[fg=${THEME[bwhite]},bg=${THEME[bblack]},bold,nodim] $window_number$RESET#[fg=${THEME[cyan]},bg=${THEME[bblack]},bold,nodim]#W  "
 # Unfocused
-tmux set -g window-status-format "${RESET}#[fg=${THEME[bwhite]},bg=${THEME[background]},bold,nodim]  $window_number#W  "
+tmux set -g window-status-format "${RESET} #[fg=${THEME[bwhite]},bg=${THEME[background]},bold,nodim]  $window_number#W  "
 
 #+--- Bars RIGHT ---+
 tmux set -g status-right "$battery_status$current_path$cmus_status$netspeed$git_status$wb_git_status$date_and_time"
